@@ -3,10 +3,10 @@ package sample;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-/**
+/*
  * Created by earthshine0 on 3/6/2015.
  */
-public class TicTacToe extends Controller{
+public class TicTacToe {
 
     private static int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
     private static int player = 1;
@@ -14,7 +14,7 @@ public class TicTacToe extends Controller{
     private static String p2 = "O";
 
 
-    public static void TicTacToe() {
+    public TicTacToe() {
         resetBoard();
     }
 
@@ -80,7 +80,7 @@ public class TicTacToe extends Controller{
             }
         }
 
-        resetButtons();
+        //resetButtons();
     }
 
     private static boolean checkBoardDirections(){
