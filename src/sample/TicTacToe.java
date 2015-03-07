@@ -10,8 +10,8 @@ public class TicTacToe {
 
     private static int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
     private static int player = 1;
-    private static String p1 = "X";
-    private static String p2 = "O";
+    private static final String p1 = "X";
+    private static final String p2 = "O";
 
 
     public TicTacToe() {
