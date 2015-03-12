@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -14,7 +15,7 @@ public class TicTacToe {
     private static final String p2 = "O";
 
 
-    public TicTacToe() {
+    private TicTacToe() {
         resetBoard();
     }
 

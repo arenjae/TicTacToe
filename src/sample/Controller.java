@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 public class Controller {
 
     //All nine buttons for tic tac toe
-    //Buttons can NOT BE STATIC!!
+    //Buttons can NOT BE STATIC
     @FXML
     private Button btnTL, btnTM, btnTR;
     @FXML
@@ -22,7 +22,7 @@ public class Controller {
     @FXML
     private Label lblStatus;
 
-    private static String blank = "";
+    private String blank = "";
 
 
     @FXML
