@@ -14,15 +14,14 @@ public class Controller {
     //All nine buttons for tic tac toe
     //Buttons can NOT BE STATIC
     @FXML
-    private Button btnTL, btnTM, btnTR;
+    protected Button btnTL, btnTM, btnTR;
     @FXML
-    private Button btnML, btnMM, btnMR;
+    protected Button btnML, btnMM, btnMR;
     @FXML
-    private Button btnBL, btnBM, btnBR;
+    protected Button btnBL, btnBM, btnBR;
     @FXML
-    private Label lblStatus;
+    protected Label lblStatus;
 
-    private String blank = "";
 
 
     @FXML
@@ -38,74 +37,31 @@ public class Controller {
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'sample.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'sample.fxml'.";
 
-        TicTacToe.resetBoard();
+        TicTacToe.resetBoard(this);
 
-        btnTL.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnTL, 0, 0, lblStatus);
-            }
-        });
+        btnTL.setOnAction(event -> TicTacToe.genericBtnClick(this,btnTL, 0, 0, lblStatus));
         
-        btnTM.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnTM, 1, 0, lblStatus);
-            }
-        });
+        btnTM.setOnAction(event -> TicTacToe.genericBtnClick(this,btnTM, 1, 0, lblStatus));
 
-        btnTR.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnTR, 2, 0, lblStatus);
-            }
-        });
+        btnTR.setOnAction(event -> TicTacToe.genericBtnClick(this,btnTR, 2, 0, lblStatus));
 
-        btnML.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnML, 0, 1, lblStatus);
-            }
-        });
+        btnML.setOnAction(event -> TicTacToe.genericBtnClick(this,btnML, 0, 1, lblStatus));
 
-        btnMM.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnMM, 1, 1, lblStatus);
-            }
-        });
+        btnMM.setOnAction(event -> TicTacToe.genericBtnClick(this,btnMM, 1, 1, lblStatus));
 
-        btnMR.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnMR, 2, 1, lblStatus);
-            }
-        });
+        btnMR.setOnAction(event -> TicTacToe.genericBtnClick(this,btnMR, 2, 1, lblStatus));
 
-        btnBL.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnBL, 0, 2, lblStatus);
-            }
-        });
+        btnBL.setOnAction(event -> TicTacToe.genericBtnClick(this,btnBL, 0, 2, lblStatus));
 
-        btnBM.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnBM, 1, 2, lblStatus);
-            }
-        });
+        btnBM.setOnAction(event -> TicTacToe.genericBtnClick(this,btnBM, 1, 2, lblStatus));
 
-        btnBR.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TicTacToe.genericBtnClick(btnBR, 2, 2, lblStatus);
-            }
-        });
+        btnBR.setOnAction(event -> TicTacToe.genericBtnClick(this,btnBR, 2, 2, lblStatus));
+
     }
 
     protected void resetButtons() {
 
+        String blank = "";
         lblStatus.setText(blank);
         btnTL.setText(blank);
         btnTM.setText(blank);

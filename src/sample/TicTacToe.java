@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 /*
  * Created by earthshine0 on 3/6/2015.
  */
-public class TicTacToe {
+public class TicTacToe{
 
     private static int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
     private static int player = 1;
@@ -15,11 +15,9 @@ public class TicTacToe {
     private static final String p2 = "O";
 
 
-    private TicTacToe() {
-        resetBoard();
-    }
+    private TicTacToe() {}
 
-    public static void genericBtnClick(Button btn, int i, int j, Label lblStatus){
+    public static void genericBtnClick(Controller aController, Button btn, int i, int j, Label lblStatus){
         if (board[i][j]!= 0) return;
 
         if (board[i][j]==0 && player==1) {
@@ -30,7 +28,8 @@ public class TicTacToe {
             btn.setText(p2);
         }
 
-        checkBoard(lblStatus);
+
+        checkBoard(aController, lblStatus);
         switchPlayer(lblStatus);
 
     }
@@ -53,13 +52,13 @@ public class TicTacToe {
     }
 
     //If someone won, then display message and reset board
-    private static void checkBoard(Label lblStatus){
+    private static void checkBoard(Controller aController, Label lblStatus){
         if (checkBoardDirections()){
             lblStatus.setText("Congrats, player " + player + " has won!");
-            resetBoard();
+            resetBoard(aController);
         } else if (checkFullBoard()){
             lblStatus.setText("Tie Game...restarting");
-            resetBoard();
+            resetBoard(aController);
         }
 
     }
@@ -74,15 +73,16 @@ public class TicTacToe {
         return true;
     }
 
-    public static void resetBoard() {
+    public static void resetBoard(Controller aController) {
         for (int x=0;x<3;x++){
             for(int y=0;y<3;y++){
                 board[x][y]=0;
             }
         }
 
-        //resetButtons();
+        aController.resetButtons();
     }
+
 
     private static boolean checkBoardDirections(){
 
