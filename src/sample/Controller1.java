@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
-/**
+/*
  * Created by earthshine0 on 3/14/2015.
  */
 public class Controller1 extends Main {
