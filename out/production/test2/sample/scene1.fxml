@@ -6,14 +6,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="399.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1">
    <children>
-      <Pane prefHeight="101.0" prefWidth="399.0">
+      <Pane prefHeight="101.0" prefWidth="300.0">
          <children>
-            <Label layoutX="19.0" prefHeight="101.0" prefWidth="361.0" text="Tic Tac Toe" textAlignment="CENTER">
+            <Label layoutX="6.0" prefHeight="101.0" prefWidth="300.0" text="Tic Tac Toe" textAlignment="CENTER">
                <font>
-                  <Font name="Bauhaus 93" size="70.0" />
+                  <Font name="Bauhaus 93" size="56.0" />
                </font>
                <effect>
                   <DropShadow color="#6dcd35" height="12.0" radius="5.5" width="12.0" />
@@ -21,7 +20,7 @@
             </Label>
          </children>
       </Pane>
-      <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="399.0" text="New Game" />
-      <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="399.0" text="New Game against CPU" />
+      <Button fx:id="btnNewGame" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game" />
+      <Button fx:id="btnNewGameCPU" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game against CPU" />
    </children>
 </VBox>
