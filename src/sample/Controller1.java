@@ -31,15 +31,14 @@ public class Controller1 extends Main {
         assert btnNewGameCPU != null : "fx:id=\"btnNewGameCPU\" was not injected: check your FXML file 'scene1.fxml'.";
         assert btnNewGame != null : "fx:id=\"btnNewGame\" was not injected: check your FXML file 'scene1.fxml'.";
 
-        Parent root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
-        Scene scene2 = new Scene(root);
+        //root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
 
-        
-        primaryStage.setTitle("Tic Tac Toe");
-        primaryStage.setScene(new Scene(root, 400, 375));
-        primaryStage.show();
-
-        btnNewGame.setOnAction(e->);
+        btnNewGame.setOnAction(e -> {
+            Scene scene2 = new Scene(root,300,375);
+            scene2.getClass().getResource("scene2.fxml");
+            window.setScene(scene2);
+            window.show();
+        });
 
     }
 }
