@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -17,7 +16,7 @@ public class TicTacToe{
 
     private TicTacToe() {}
 
-    public static void genericBtnClick(Controller aController, Button btn, int i, int j, Label lblStatus){
+    public static void genericBtnClick(Controller2 aController, Button btn, int i, int j, Label lblStatus){
         if (board[i][j]!= 0) return;
 
         if (board[i][j]==0 && player==1) {
@@ -52,7 +51,7 @@ public class TicTacToe{
     }
 
     //If someone won, then display message and reset board
-    private static void checkBoard(Controller aController, Label lblStatus){
+    private static void checkBoard(Controller2 aController, Label lblStatus){
         if (checkBoardDirections()){
             lblStatus.setText("Congrats, player " + player + " has won!");
             resetBoard(aController);
@@ -73,7 +72,7 @@ public class TicTacToe{
         return true;
     }
 
-    public static void resetBoard(Controller aController) {
+    public static void resetBoard(Controller2 aController) {
         for (int x=0;x<3;x++){
             for(int y=0;y<3;y++){
                 board[x][y]=0;

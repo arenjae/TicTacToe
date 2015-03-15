@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
    <children>
       <MenuBar>
         <menus>

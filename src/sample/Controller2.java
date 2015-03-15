@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 
-public class Controller {
+public class Controller2 extends Main{
 
     //All nine buttons for tic tac toe
     //Buttons can NOT BE STATIC
@@ -26,16 +26,16 @@ public class Controller {
 
     @FXML
     void initialize() {
-        assert btnML != null : "fx:id=\"btnML\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnTR != null : "fx:id=\"btnTR\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnMM != null : "fx:id=\"btnMM\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnBR != null : "fx:id=\"btnBR\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnMR != null : "fx:id=\"btnMR\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnBM != null : "fx:id=\"btnBM\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnBL != null : "fx:id=\"btnBL\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnTM != null : "fx:id=\"btnTM\" was not injected: check your FXML file 'sample.fxml'.";
-        assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'sample.fxml'.";
-        assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'sample.fxml'.";
+        assert btnML != null : "fx:id=\"btnML\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnTR != null : "fx:id=\"btnTR\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnMM != null : "fx:id=\"btnMM\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnBR != null : "fx:id=\"btnBR\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnMR != null : "fx:id=\"btnMR\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnBM != null : "fx:id=\"btnBM\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnBL != null : "fx:id=\"btnBL\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnTM != null : "fx:id=\"btnTM\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
+        assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
         TicTacToe.resetBoard(this);
 
