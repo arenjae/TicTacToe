@@ -5,6 +5,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -72,6 +76,15 @@ public class Controller2 extends Main{
         btnBL.setText(blank);
         btnBM.setText(blank);
         btnBR.setText(blank);
+    }
+
+    protected void changeScenes(){
+
+        /*
+        Parent root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+        primaryStage.setTitle("Tic Tac Toe");
+        primaryStage.setScene(new Scene(root, 300, 375));
+        primaryStage.show();*/
     }
 
 }
