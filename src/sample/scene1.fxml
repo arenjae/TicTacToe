@@ -11,16 +11,16 @@
       <Pane prefHeight="101.0" prefWidth="300.0">
          <children>
             <Label layoutX="6.0" prefHeight="101.0" prefWidth="300.0" text="Tic Tac Toe" textAlignment="CENTER">
-               <font>
-                  <Font name="Bauhaus 93" size="56.0" />
-               </font>
                <effect>
                   <DropShadow color="#6dcd35" height="12.0" radius="5.5" width="12.0" />
                </effect>
             </Label>
          </children>
       </Pane>
-      <Button fx:id="btnNewGame" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game" />
-      <Button fx:id="btnNewGameCPU" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game against CPU" />
+      <Button fx:id="btnNewGame" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game">
+         <effect>
+            <Blend mode="SOFT_LIGHT" />
+         </effect></Button>
+      <Button fx:id="btnNewGameCPU" alignment="CENTER" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game against CPU" />
    </children>
 </VBox>

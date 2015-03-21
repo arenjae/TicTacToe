@@ -1,0 +1,49 @@
+.root {
+  -fx-background-color: white;
+  -fx-padding: 0px;
+  -fx-font-size: 20px;
+  -fx-font-family: "Comic Sans MS";
+}
+ 
+.info {
+  -fx-text-fill: white;
+}
+
+.label{
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 40px;
+}
+
+.button{
+    -fx-font-family: "Corbel";
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-animated: true;
+    -fx-background-insets: 0,1 ;
+    -fx-background-radius: 0,0;
+    -fx-text-fill: #395306;
+    -fx-background-color: linear-gradient(to bottom, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+ 
+.game-controls {
+  -fx-spacing: 20px;
+  -fx-alignment: center;
+}
+ 
+.status-indicator {
+  -fx-alignment: center;
+  -fx-padding: 16px;
+}
+ 
+.board {
+  -fx-background-color: slategrey;
+  -fx-hgap: 10px;
+  -fx-vgap: 10px;
+  -fx-effect: dropshadow(gaussian, slategrey, 20, 0, 0, 0); /* effect disabled as it causes texture tearing on java 8b79 ea for OS X*/
+}
+ 
+.square {
+  -fx-padding: 10px;
+  -fx-background-color: azure;
+}

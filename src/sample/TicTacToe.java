@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 /*
  * Created by earthshine0 on 3/6/2015.
  */
-public class TicTacToe{
+public class TicTacToe extends Controller2{
 
     private static int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
     private static int player = 1;
@@ -14,10 +14,10 @@ public class TicTacToe{
     private static final String p2 = "O";
 
 
-    private TicTacToe() {}
+    protected TicTacToe() {}
 
-    public static void genericBtnClick(Controller2 aController, Button btn, int i, int j, Label lblStatus){
-        if (board[i][j]!= 0) return;
+    public static int genericBtnClick(Controller2 aController, Button btn, int i, int j, Label lblStatus){
+        if (board[i][j]!= 0) return 0;
 
         if (board[i][j]==0 && player==1) {
             setBoard(i,j);
@@ -30,6 +30,7 @@ public class TicTacToe{
 
         checkBoard(aController, lblStatus);
         switchPlayer(lblStatus);
+        return 1; //move was successful
 
     }
 

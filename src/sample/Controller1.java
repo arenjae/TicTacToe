@@ -33,11 +33,20 @@ public class Controller1 extends Main {
         //root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
 
         btnNewGame.setOnAction(e -> {
-            Scene scene2 = new Scene(root,300,375);
+            Scene scene2 = new Scene(window.getScene().getRoot(),300,375);
+            //Scene scene2 = new Scene(root,300,375);//Fix this part!!!
             scene2.getClass().getResource("scene2.fxml");
             window.setScene(scene2);
             window.show();
         });
+
+        /*
+        btnNewGameCPU.setOnAction(e->{
+            Scene scene3 = new Scene(window.getClass().getResource("scene3.fxml"),300,375);
+            scene3.getClass().getResource("scene3.fxml");
+            window.setScene(scene3);
+            window.show();
+        });*/
 
     }
 }
