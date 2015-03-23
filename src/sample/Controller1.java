@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -30,13 +32,17 @@ public class Controller1 extends Main {
         assert btnNewGameCPU != null : "fx:id=\"btnNewGameCPU\" was not injected: check your FXML file 'scene1.fxml'.";
         assert btnNewGame != null : "fx:id=\"btnNewGame\" was not injected: check your FXML file 'scene1.fxml'.";
 
-        //root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+
 
         btnNewGame.setOnAction(e -> {
-            Scene scene2 = new Scene(window.getScene().getRoot(),300,375);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("styleScene1.fxml"));
+            //VBox root2 = (VBox) loader.load();
+
+            //Scene scene2 = new Scene(root2);
+            //Scene scene2 = new Scene(window.getScene().getRoot(),300,375);
             //Scene scene2 = new Scene(root,300,375);//Fix this part!!!
-            scene2.getClass().getResource("scene2.fxml");
-            window.setScene(scene2);
+            //scene2.getClass().getResource("scene2.fxml");
+            //window.setScene(scene2);
             window.show();
         });
 

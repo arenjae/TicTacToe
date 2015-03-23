@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /* Created by earthshine0 on 3/15/2015
@@ -17,20 +18,20 @@ public class Main extends Application {
 
     Stage window;
 
-    Parent root;
+    VBox root;
     //BorderPane root;
     @Override
     public void start(Stage primaryStage) throws Exception{
 
         window = primaryStage;
-        root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+        root = (VBox)FXMLLoader.load(getClass().getResource("scene1.fxml"));
+        Scene scene = new Scene(root, 300,375);
+        scene.getStylesheets().add(getClass().getResource("styleScene1.css").toExternalForm());
         
         window.setTitle("Tic Tac Toe");
-        window.setScene(new Scene(root, 300, 375));
+        window.setScene(scene);
+        //window.setResizable(false);
         window.show();
-
-
-
     }
 
 

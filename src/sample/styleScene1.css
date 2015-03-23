@@ -1,17 +1,23 @@
 .root {
-  -fx-background-color: white;
-  -fx-padding: 0px;
+  -fx-background-color:linear-gradient(to bottom, #d9e0cc 0%,#b4c687 100%);
+    -fx-padding: 0px;
   -fx-font-size: 20px;
   -fx-font-family: "Comic Sans MS";
 }
- 
+
 .info {
   -fx-text-fill: white;
 }
 
 .label{
-    -fx-font-family: "Bauhaus 93";
-    -fx-font-size: 40px;
+    -fx-font-family: "Corbel";
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-text-fill:#75a417;
+    -fx-effect:  innershadow(one-pass-box, #006400, 10, 0, 0, 0);
+
 }
 
 .button{
@@ -22,10 +28,19 @@
     -fx-background-insets: 0,1 ;
     -fx-background-radius: 0,0;
     -fx-text-fill: #395306;
+    -fx-background-color: linear-gradient(to bottom, #b7f741 0%, #c1f650 50%, #9ee817 51%, #9ee10a 100%);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 5 );
+}
+
+.button:hover{
     -fx-background-color: linear-gradient(to bottom, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 5 );
+}
+
+.button:pressed{
+    -fx-background-color: linear-gradient(to top, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
 }
- 
 .game-controls {
   -fx-spacing: 20px;
   -fx-alignment: center;
