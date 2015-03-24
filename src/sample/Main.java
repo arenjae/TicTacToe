@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -16,15 +15,14 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    Stage window;
+    protected Stage window;
+    protected Parent root;
 
-    VBox root;
-    //BorderPane root;
     @Override
     public void start(Stage primaryStage) throws Exception{
 
         window = primaryStage;
-        root = (VBox)FXMLLoader.load(getClass().getResource("scene1.fxml"));
+        root = FXMLLoader.load(getClass().getResource("scene1.fxml"));
         Scene scene = new Scene(root, 300,375);
         scene.getStylesheets().add(getClass().getResource("styleScene1.css").toExternalForm());
         

@@ -17,7 +17,7 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="btnNewGame" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="New Game">
+      <Button fx:id="btnNewGame" alignment="CENTER" defaultButton="true" mnemonicParsing="false" pickOnBounds="false" prefHeight="72.0" prefWidth="300.0" text="New Game">
          <effect>
             <Blend mode="SOFT_LIGHT" />
          </effect></Button>

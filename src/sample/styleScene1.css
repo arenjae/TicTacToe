@@ -15,8 +15,9 @@
     -fx-font-weight: bold;
     -fx-text-alignment: center;
     -fx-alignment: center;
-    -fx-text-fill:#75a417;
-    -fx-effect:  innershadow(one-pass-box, #006400, 10, 0, 0, 0);
+    -fx-text-fill:#c1f650;
+    -fx-effect: innershadow(one-pass-box, #006400, 10, 0, 0, 0),
+                 dropshadow(gaussian, grey, 5, 0, 0, 2);
 
 }
 
