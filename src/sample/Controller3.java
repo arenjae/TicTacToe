@@ -21,6 +21,8 @@ public class Controller3 {
 
     protected Stage window;
     protected Parent root;
+    protected FXMLLoader root2;
+    protected Scene scene2;
 
     @FXML
     void initialize() throws Exception{
@@ -28,17 +30,35 @@ public class Controller3 {
         assert btnHard != null : "fx:id=\"btnHard\" was not injected: check your FXML file 'scene3.fxml'.";
         assert btnEasy != null : "fx:id=\"btnEasy\" was not injected: check your FXML file 'scene3.fxml'.";
 
-        root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+        root2 = new FXMLLoader(getClass().getResource("scene2.fxml"));
 
-        btnEasy.setOnAction(e -> openScene2());
+        btnEasy.setOnAction(e->{
+            try {
+                window = (Stage) btnEasy.getScene().getWindow();
+                scene2 = new Scene((Parent) root2.load());
+                Controller2 testController = root2.getController();
+                testController.setAiOption(1);
+                scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
+                window.setScene(scene2);
+            } catch (Exception e1){
 
-        btnNormal.setOnAction(e->openScene2());
+            }
+        });
 
-        btnHard.setOnAction(e->openScene2());
+        /*
+        btnNormal.setOnAction(e->openScene2(2));
+
+        btnHard.setOnAction(e->openScene2(3));
+        */
 
     }
 
-    void openScene2() {
+    void openScene2(int option) {
+
+        window.setScene(scene2);
+    }
+
+    void openScene2old(int option){
         window = (Stage) btnEasy.getScene().getWindow();
         Scene scene2 = new Scene(root);
         scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());

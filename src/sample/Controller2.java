@@ -18,7 +18,7 @@ public class Controller2{
     @FXML
     protected Label lblStatus;
 
-
+    protected int aiOption = 0;
 
     @FXML
     void initialize() {
@@ -33,7 +33,7 @@ public class Controller2{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        TicTacToe game = new TicTacToe(0);
+        TicTacToe game = new TicTacToe(aiOption);
 
         game.resetBoard(this);
         
@@ -71,6 +71,10 @@ public class Controller2{
         btnBM.setText(blank);
         btnBR.setText(blank);
     }
+
+    public void setAiOption(int x){aiOption=x;}
+
+    public int getAiOption(){return aiOption;}
 
     protected void changeScenes(){
         //Empty for now, may fill it so that when user wins game they have a choice of going back to the main menu
