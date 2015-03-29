@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 public class Controller2{
 
     //All nine buttons for tic tac toe
-    //Buttons can NOT BE STATIC (They are static??)
+    //Buttons can NOT BE STATIC
     @FXML
     protected Button btnTL, btnTM, btnTR;
     @FXML
@@ -33,28 +33,27 @@ public class Controller2{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        TicTacToe newGame = new TicTacToe(0);
+        TicTacToe game = new TicTacToe(0);
 
-        newGame.resetBoard(this);
-        //TicTacToe.resetBoard(this);
-
-        btnTL.setOnAction(event -> newGame.genericBtnClick(this, btnTL, 0, 0, lblStatus));
+        game.resetBoard(this);
         
-        btnTM.setOnAction(event -> newGame.genericBtnClick(this, btnTM, 1, 0, lblStatus));
+        btnTL.setOnAction(event -> game.genericBtnClick(this, btnTL, 0, 0, lblStatus));
+        
+        btnTM.setOnAction(event -> game.genericBtnClick(this, btnTM, 1, 0, lblStatus));
 
-        btnTR.setOnAction(event -> newGame.genericBtnClick(this,btnTR, 2, 0, lblStatus));
+        btnTR.setOnAction(event -> game.genericBtnClick(this,btnTR, 2, 0, lblStatus));
 
-        btnML.setOnAction(event -> newGame.genericBtnClick(this,btnML, 0, 1, lblStatus));
+        btnML.setOnAction(event -> game.genericBtnClick(this,btnML, 0, 1, lblStatus));
 
-        btnMM.setOnAction(event -> newGame.genericBtnClick(this,btnMM, 1, 1, lblStatus));
+        btnMM.setOnAction(event -> game.genericBtnClick(this,btnMM, 1, 1, lblStatus));
 
-        btnMR.setOnAction(event -> newGame.genericBtnClick(this,btnMR, 2, 1, lblStatus));
+        btnMR.setOnAction(event -> game.genericBtnClick(this,btnMR, 2, 1, lblStatus));
 
-        btnBL.setOnAction(event -> newGame.genericBtnClick(this,btnBL, 0, 2, lblStatus));
+        btnBL.setOnAction(event -> game.genericBtnClick(this,btnBL, 0, 2, lblStatus));
 
-        btnBM.setOnAction(event -> newGame.genericBtnClick(this,btnBM, 1, 2, lblStatus));
+        btnBM.setOnAction(event -> game.genericBtnClick(this,btnBM, 1, 2, lblStatus));
 
-        btnBR.setOnAction(event -> newGame.genericBtnClick(this,btnBR, 2, 2, lblStatus));
+        btnBR.setOnAction(event -> game.genericBtnClick(this,btnBR, 2, 2, lblStatus));
 
     }
 
@@ -74,12 +73,7 @@ public class Controller2{
     }
 
     protected void changeScenes(){
-
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
-        primaryStage.setTitle("Tic Tac Toe");
-        primaryStage.setScene(new Scene(root, 300, 375));
-        primaryStage.show();*/
+        //Empty for now, may fill it so that when user wins game they have a choice of going back to the main menu
     }
 
 }
