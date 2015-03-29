@@ -10,8 +10,8 @@ public class TicTacToeAI extends TicTacToe{
 
     protected int moveX, moveY;
 
-    public TicTacToeAI(int AIOption) {
-        super(AIOption);
+    public TicTacToeAI() {
+
     }
 
 
@@ -23,7 +23,29 @@ public class TicTacToeAI extends TicTacToe{
         //Systematically iterate through the board, putting in an move at each square
         //and then check to see if it would be a winning move. If it is, then put a place there.
         //This checks two things, if the user will win with that move, and if the AI will win with that move
+        int [][] testBoard = board.clone(); //make a clone
+        //generate a move (1-6, as long as it is not already occupied)
+        //test move as player (if player will win, then move there)
+        //then test move as AI (if AI will win, then move there)
 
+        int computer = player;
+        int user = player; //WRONG, change later to opposite of player
+
+        for (moveX = 0; moveX<3;moveX++){
+            for(moveY = 0; moveY<3;moveY++){
+                testBoard[moveX][moveY]=computer;
+                if (checkBoardDirections(testBoard)) return true;
+                testBoard = board.clone();
+            }
+        }
+
+        for (moveX = 0; moveX<3;moveX++){
+            for(moveY = 0; moveY<3;moveY++){
+                testBoard[moveX][moveY]=user;
+                if (checkBoardDirections(testBoard)) return true;
+                testBoard = board.clone();
+            }
+        }
 
 
         return false;
@@ -31,12 +53,27 @@ public class TicTacToeAI extends TicTacToe{
 
     protected int createMove(){
         //return TicTacToe.genericBtnClick(window.getScene().getClass(),btnTL,moveX,moveY);
+        //If future move returns true, that means moveX and moveY are already configured.
+        //if it returns false, then AI needs to create its own move
+        if (!checkFutureMove()){
+            generateMove();
+        }
+
 
 
         return 0;
     }
 
+    protected void generateMove(){
+
+    }
+
     protected boolean checkMove(){
+
+        int [][] testBoard = board.clone();
+        if (checkBoardDirections(testBoard) || checkFullBoard(testBoard)){genericBtnClick(moveX,moveY);}
+
+
         return false;
     }
 

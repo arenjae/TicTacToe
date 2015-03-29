@@ -8,16 +8,11 @@ import java.util.Random;
  */
 public class TicTacToeAIEasy extends TicTacToeAI{
 
-    public TicTacToeAIEasy(int AIOption) {
-        super(AIOption);
+    public TicTacToeAIEasy() {
     }
 
-    protected void AITurn(){
-        if (checkFutureMove()) return;
-        createMove();
-    }
 
-    protected int createMove(){
+    protected void generateMove(){
 
         Random rngX = new Random();
         Random rngY = new Random();
@@ -27,7 +22,6 @@ public class TicTacToeAIEasy extends TicTacToeAI{
             moveY = rngY.nextInt(3);
         }while(!checkMove());
 
-        return 0;
     }
 
 

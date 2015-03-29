@@ -33,27 +33,38 @@ public class Controller2{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        TicTacToe game = new TicTacToe(aiOption);
+        TicTacToe game = null;
 
-        game.resetBoard(this);
+        if (aiOption==0){
+            game = new TicTacToe();
+        }else if(aiOption==1){
+            game = new TicTacToeAIEasy();
+        }
+
+
+        assert game != null;
+        game.setController(this);
+        game.resetBoard();
+
+        final TicTacToe finalGame = game;
+
+        btnTL.setOnAction(event -> finalGame.genericBtnClick(0, 0));
         
-        btnTL.setOnAction(event -> game.genericBtnClick(this, btnTL, 0, 0, lblStatus));
-        
-        btnTM.setOnAction(event -> game.genericBtnClick(this, btnTM, 1, 0, lblStatus));
+        btnTM.setOnAction(event -> finalGame.genericBtnClick(1, 0));
 
-        btnTR.setOnAction(event -> game.genericBtnClick(this,btnTR, 2, 0, lblStatus));
+        btnTR.setOnAction(event -> finalGame.genericBtnClick(2, 0));
 
-        btnML.setOnAction(event -> game.genericBtnClick(this,btnML, 0, 1, lblStatus));
+        btnML.setOnAction(event -> finalGame.genericBtnClick(0, 1));
 
-        btnMM.setOnAction(event -> game.genericBtnClick(this,btnMM, 1, 1, lblStatus));
+        btnMM.setOnAction(event -> finalGame.genericBtnClick(1, 1));
 
-        btnMR.setOnAction(event -> game.genericBtnClick(this,btnMR, 2, 1, lblStatus));
+        btnMR.setOnAction(event -> finalGame.genericBtnClick(2, 1));
 
-        btnBL.setOnAction(event -> game.genericBtnClick(this,btnBL, 0, 2, lblStatus));
+        btnBL.setOnAction(event -> finalGame.genericBtnClick(0, 2));
 
-        btnBM.setOnAction(event -> game.genericBtnClick(this,btnBM, 1, 2, lblStatus));
+        btnBM.setOnAction(event -> finalGame.genericBtnClick(1, 2));
 
-        btnBR.setOnAction(event -> game.genericBtnClick(this,btnBR, 2, 2, lblStatus));
+        btnBR.setOnAction(event -> finalGame.genericBtnClick(2, 2));
 
     }
 
@@ -71,6 +82,21 @@ public class Controller2{
         btnBM.setText(blank);
         btnBR.setText(blank);
     }
+
+    public void setBtnText(int i, int j,String text){
+        if (i == 0 && j==0) btnTL.setText(text);
+        else if (i == 1 && j==0) btnTM.setText(text);
+        else if (i == 2 && j==0) btnTR.setText(text);
+        else if (i == 0 && j==1) btnML.setText(text);
+        else if (i == 1 && j==1) btnMM.setText(text);
+        else if (i == 2 && j==1) btnMR.setText(text);
+        else if (i == 0 && j==2) btnBL.setText(text);
+        else if (i == 1 && j==2) btnBM.setText(text);
+        else if (i == 2 && j==2) btnBR.setText(text);
+    }
+
+    public void setLblText(String text){lblStatus.setText(text);}
+
 
     public void setAiOption(int x){aiOption=x;}
 
