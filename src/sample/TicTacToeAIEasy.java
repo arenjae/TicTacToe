@@ -8,6 +8,10 @@ import java.util.Random;
  */
 public class TicTacToeAIEasy extends TicTacToeAI{
 
+    public TicTacToeAIEasy(int AIOption) {
+        super(AIOption);
+    }
+
     protected void AITurn(){
         if (checkFutureMove()) return;
         createMove();

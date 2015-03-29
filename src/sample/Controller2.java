@@ -5,10 +5,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 
-public class Controller2 extends Main{
+public class Controller2{
 
     //All nine buttons for tic tac toe
-    //Buttons can NOT BE STATIC
+    //Buttons can NOT BE STATIC (They are static??)
     @FXML
     protected Button btnTL, btnTM, btnTR;
     @FXML
@@ -33,25 +33,28 @@ public class Controller2 extends Main{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        TicTacToe.resetBoard(this);
+        TicTacToe newGame = new TicTacToe(0);
 
-        btnTL.setOnAction(event -> TicTacToe.genericBtnClick(this,btnTL, 0, 0, lblStatus));
+        newGame.resetBoard(this);
+        //TicTacToe.resetBoard(this);
+
+        btnTL.setOnAction(event -> newGame.genericBtnClick(this, btnTL, 0, 0, lblStatus));
         
-        btnTM.setOnAction(event -> TicTacToe.genericBtnClick(this,btnTM, 1, 0, lblStatus));
+        btnTM.setOnAction(event -> newGame.genericBtnClick(this, btnTM, 1, 0, lblStatus));
 
-        btnTR.setOnAction(event -> TicTacToe.genericBtnClick(this,btnTR, 2, 0, lblStatus));
+        btnTR.setOnAction(event -> newGame.genericBtnClick(this,btnTR, 2, 0, lblStatus));
 
-        btnML.setOnAction(event -> TicTacToe.genericBtnClick(this,btnML, 0, 1, lblStatus));
+        btnML.setOnAction(event -> newGame.genericBtnClick(this,btnML, 0, 1, lblStatus));
 
-        btnMM.setOnAction(event -> TicTacToe.genericBtnClick(this,btnMM, 1, 1, lblStatus));
+        btnMM.setOnAction(event -> newGame.genericBtnClick(this,btnMM, 1, 1, lblStatus));
 
-        btnMR.setOnAction(event -> TicTacToe.genericBtnClick(this,btnMR, 2, 1, lblStatus));
+        btnMR.setOnAction(event -> newGame.genericBtnClick(this,btnMR, 2, 1, lblStatus));
 
-        btnBL.setOnAction(event -> TicTacToe.genericBtnClick(this,btnBL, 0, 2, lblStatus));
+        btnBL.setOnAction(event -> newGame.genericBtnClick(this,btnBL, 0, 2, lblStatus));
 
-        btnBM.setOnAction(event -> TicTacToe.genericBtnClick(this,btnBM, 1, 2, lblStatus));
+        btnBM.setOnAction(event -> newGame.genericBtnClick(this,btnBM, 1, 2, lblStatus));
 
-        btnBR.setOnAction(event -> TicTacToe.genericBtnClick(this,btnBR, 2, 2, lblStatus));
+        btnBR.setOnAction(event -> newGame.genericBtnClick(this,btnBR, 2, 2, lblStatus));
 
     }
 

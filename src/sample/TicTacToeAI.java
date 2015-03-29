@@ -10,6 +10,10 @@ public class TicTacToeAI extends TicTacToe{
 
     protected int moveX, moveY;
 
+    public TicTacToeAI(int AIOption) {
+        super(AIOption);
+    }
+
 
     /*Method that reads the available places to move in TicTacToe
      * and moves to it

@@ -21,13 +21,16 @@ public class Controller1{
 
     protected Stage window;
     protected Parent root;
+    protected Parent root2;
 
     @FXML
     void initialize() throws Exception{
         assert btnNewGameCPU != null : "fx:id=\"btnNewGameCPU\" was not injected: check your FXML file 'scene1.fxml'.";
         assert btnNewGame != null : "fx:id=\"btnNewGame\" was not injected: check your FXML file 'scene1.fxml'.";
 
+
         root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+
 
         btnNewGame.setOnAction(e -> {
             window = (Stage) btnNewGame.getScene().getWindow();
@@ -36,13 +39,14 @@ public class Controller1{
             window.setScene(scene2);
         });
 
-        /*
+        root2 = FXMLLoader.load(getClass().getResource("scene3.fxml"));
+
         btnNewGameCPU.setOnAction(e->{
-            Scene scene3 = new Scene(window.getClass().getResource("scene3.fxml"),300,375);
-            scene3.getClass().getResource("scene3.fxml");
+            window = (Stage) btnNewGameCPU.getScene().getWindow();
+            Scene scene3 = new Scene(root2);
+            scene3.getStylesheets().add(getClass().getResource("styleScene3.css").toExternalForm());
             window.setScene(scene3);
-            window.show();
-        });*/
+        });
 
     }
 }

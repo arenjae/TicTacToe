@@ -6,17 +6,22 @@ import javafx.scene.control.Label;
 /*
  * Created by earthshine0 on 3/6/2015.
  */
-public class TicTacToe extends Controller2{
+public class TicTacToe{
 
-    private static int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
-    private static int player = 1;
-    private static final String p1 = "X";
-    private static final String p2 = "O";
+    private int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
+    private int player = 1;
+    private final String p1 = "X";
+    private final String p2 = "O";
+    public TicTacToeAI GameAI;
 
 
-    protected TicTacToe() {}
+    public TicTacToe(int AIOption) {
+        if (AIOption == 1) {
+            GameAI = new TicTacToeAIEasy(1);
+        }
+    }
 
-    public static int genericBtnClick(Controller2 aController, Button btn, int i, int j, Label lblStatus){
+    public int genericBtnClick(Controller2 aController, Button btn, int i, int j, Label lblStatus){
         if (board[i][j]!= 0) return 0;
 
         if (board[i][j]==0 && player==1) {
@@ -35,7 +40,7 @@ public class TicTacToe extends Controller2{
     }
 
 
-    private static void switchPlayer(Label lblStatus){
+    private void switchPlayer(Label lblStatus){
         switch (player){
             case 1:
                 player = 2;
@@ -47,12 +52,12 @@ public class TicTacToe extends Controller2{
         lblStatus.setText("Player " + player + "'s turn");
     }
 
-    private static void setBoard(int x, int y){
+    private   void setBoard(int x, int y){
         board[x][y] = player;
     }
 
     //If someone won, then display message and reset board
-    private static void checkBoard(Controller2 aController, Label lblStatus){
+    private void checkBoard(Controller2 aController, Label lblStatus){
         if (checkBoardDirections()){
             lblStatus.setText("Congrats, player " + player + " has won!");
             resetBoard(aController);
@@ -63,7 +68,7 @@ public class TicTacToe extends Controller2{
 
     }
 
-    private static boolean checkFullBoard() {
+    private boolean checkFullBoard() {
         for (int x=0;x<3;x++){
             for(int y=0;y<3;y++){
                 if(board[x][y]==0) return false;
@@ -73,7 +78,7 @@ public class TicTacToe extends Controller2{
         return true;
     }
 
-    public static void resetBoard(Controller2 aController) {
+    public void resetBoard(Controller2 aController) {
         for (int x=0;x<3;x++){
             for(int y=0;y<3;y++){
                 board[x][y]=0;
@@ -84,7 +89,7 @@ public class TicTacToe extends Controller2{
     }
 
 
-    private static boolean checkBoardDirections(){
+    private boolean checkBoardDirections(){
 
         //Check columns
         for (int x=0;x<3;x++) {
