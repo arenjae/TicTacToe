@@ -27,7 +27,6 @@ public class Main extends Application {
         
         window.setTitle("Tic Tac Toe");
         window.setScene(scene);
-        //window.setResizable(false);
         window.show();
     }
 

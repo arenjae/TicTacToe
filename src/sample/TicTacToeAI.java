@@ -12,13 +12,28 @@ public class TicTacToeAI extends TicTacToe{
 
 
     /*Method that reads the available places to move in TicTacToe
-        * and moves to it
-        */
-    private int createMove(){
+     * and moves to it
+    */
+    protected boolean checkFutureMove(){
+        //Get a copy of the board
+        //Systematically iterate through the board, putting in an move at each square
+        //and then check to see if it would be a winning move. If it is, then put a place there.
+        //This checks two things, if the user will win with that move, and if the AI will win with that move
+
+
+
+        return false;
+    }
+
+    protected int createMove(){
         //return TicTacToe.genericBtnClick(window.getScene().getClass(),btnTL,moveX,moveY);
 
 
         return 0;
+    }
+
+    protected boolean checkMove(){
+        return false;
     }
 
 
