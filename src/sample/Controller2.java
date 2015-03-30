@@ -33,38 +33,38 @@ public class Controller2{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        TicTacToe game = null;
+        //TicTacToe game = null;
 
+        /*
         if (aiOption==0){
             game = new TicTacToe();
         }else if(aiOption==1){
             game = new TicTacToeAIEasy();
         }
-
-
-        assert game != null;
+        */
+        //TicTacToe game = new TicTacToe(); //WORKS
+        TicTacToeAI game = new TicTacToeAI();
+        //TicTacToeAIEasy game = new TicTacToeAIEasy();
         game.setController(this);
         game.resetBoard();
 
-        final TicTacToe finalGame = game;
-
-        btnTL.setOnAction(event -> finalGame.genericBtnClick(0, 0));
+        btnTL.setOnAction(event -> game.genericBtnClick(0, 0));
         
-        btnTM.setOnAction(event -> finalGame.genericBtnClick(1, 0));
+        btnTM.setOnAction(event -> game.genericBtnClick(1, 0));
 
-        btnTR.setOnAction(event -> finalGame.genericBtnClick(2, 0));
+        btnTR.setOnAction(event -> game.genericBtnClick(2, 0));
 
-        btnML.setOnAction(event -> finalGame.genericBtnClick(0, 1));
+        btnML.setOnAction(event -> game.genericBtnClick(0, 1));
 
-        btnMM.setOnAction(event -> finalGame.genericBtnClick(1, 1));
+        btnMM.setOnAction(event -> game.genericBtnClick(1, 1));
 
-        btnMR.setOnAction(event -> finalGame.genericBtnClick(2, 1));
+        btnMR.setOnAction(event -> game.genericBtnClick(2, 1));
 
-        btnBL.setOnAction(event -> finalGame.genericBtnClick(0, 2));
+        btnBL.setOnAction(event -> game.genericBtnClick(0, 2));
 
-        btnBM.setOnAction(event -> finalGame.genericBtnClick(1, 2));
+        btnBM.setOnAction(event -> game.genericBtnClick(1, 2));
 
-        btnBR.setOnAction(event -> finalGame.genericBtnClick(2, 2));
+        btnBR.setOnAction(event -> game.genericBtnClick(2, 2));
 
     }
 

@@ -10,10 +10,9 @@ public class TicTacToe{
 
     protected int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
     protected int player = 1;
-    private final String p1 = "X";
-    private final String p2 = "O";
+    protected final String p1 = "X";
+    protected final String p2 = "O";
     protected Controller2 aController;
-
 
     public TicTacToe() {
     }
@@ -34,12 +33,13 @@ public class TicTacToe{
 
         checkBoard();
         switchPlayer();
+
         return 1; //move was successful
 
     }
 
 
-    private void switchPlayer(){
+    protected void switchPlayer(){
         switch (player){
             case 1:
                 player = 2;
@@ -51,12 +51,12 @@ public class TicTacToe{
         aController.setLblText("Player " + player + "'s turn");
     }
 
-    private   void setBoard(int x, int y){
+    protected void setBoard(int x, int y){
         board[x][y] = player;
     }
 
     //If someone won, then display message and reset board
-    private void checkBoard(){
+    protected void checkBoard(){
         if (checkBoardDirections()){
             aController.setLblText("Congrats, player " + player + " has won!");
 
@@ -68,7 +68,7 @@ public class TicTacToe{
 
     }
 
-    private boolean checkFullBoard() {
+    protected boolean checkFullBoard() {
         for (int x=0;x<3;x++){
             for(int y=0;y<3;y++){
                 if(board[x][y]==0) return false;
@@ -99,7 +99,7 @@ public class TicTacToe{
     }
 
 
-    private boolean checkBoardDirections(){
+    protected boolean checkBoardDirections(){
 
         //Check columns
         for (int x=0;x<3;x++) {
