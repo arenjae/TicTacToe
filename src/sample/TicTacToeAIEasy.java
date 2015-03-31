@@ -25,7 +25,11 @@ public class TicTacToeAIEasy extends TicTacToeAI{
 
         checkBoard();
         switchPlayer();
-        createMove();
+        if (aiTurn == false) aiTurn=true;
+        else
+            aiTurn = false;
+
+        if (aiTurn) createMove();
 
         return 1; //move was successful
 
@@ -35,7 +39,8 @@ public class TicTacToeAIEasy extends TicTacToeAI{
         //return TicTacToe.genericBtnClick(window.getScene().getClass(),btnTL,moveX,moveY);
         //If future move returns true, that means moveX and moveY are already configured.
         //if it returns false, then AI needs to create its own move
-        if (!checkFutureMove()) generateMove();
+        if (!checkFutureMove())
+            generateMove();
     }
 
     protected void generateMove(){

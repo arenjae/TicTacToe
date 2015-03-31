@@ -43,8 +43,8 @@ public class Controller2{
         }
         */
         //TicTacToe game = new TicTacToe(); //WORKS
-        TicTacToeAI game = new TicTacToeAI();
-        //TicTacToeAIEasy game = new TicTacToeAIEasy();
+        //TicTacToeAI game = new TicTacToeAI();
+        TicTacToeAIEasy game = new TicTacToeAIEasy();
         game.setController(this);
         game.resetBoard();
 

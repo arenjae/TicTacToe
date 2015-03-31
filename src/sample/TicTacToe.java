@@ -48,6 +48,7 @@ public class TicTacToe{
                 player = 1;
                 break;
         }
+
         aController.setLblText("Player " + player + "'s turn");
     }
 

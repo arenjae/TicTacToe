@@ -9,6 +9,13 @@ package sample;
 public class TicTacToeAI extends TicTacToe{
 
     protected int moveX, moveY;
+    protected int [][] testBoard=new int[3][3];
+
+    public void setAiTurn(boolean aiTurn) {
+        this.aiTurn = aiTurn;
+    }
+
+    protected boolean aiTurn = false;
 
     public TicTacToeAI() {
 
@@ -23,14 +30,21 @@ public class TicTacToeAI extends TicTacToe{
         //Systematically iterate through the board, putting in an move at each square
         //and then check to see if it would be a winning move. If it is, then put a place there.
         //This checks two things, if the user will win with that move, and if the AI will win with that move
-        int [][] testBoard = null;
-        System.arraycopy(board,0,testBoard,0,9);
+
+        //System.arraycopy(board,0,testBoard,0,board.length*board.length);
+        stupidArrayCopy(board,testBoard);
         //generate a move (1-6, as long as it is not already occupied)
         //test move as player (if player will win, then move there)
         //then test move as AI (if AI will win, then move there)
 
         int computer = player;
-        int user = player; //WRONG, change later to opposite of player
+        int user; //WRONG, change later to opposite of player
+
+        if (player==1)
+            user = 2;
+        else
+            user = 1;
+
 
         for (moveX = 0; moveX<3;moveX++){
             for(moveY = 0; moveY<3;moveY++){
@@ -39,7 +53,8 @@ public class TicTacToeAI extends TicTacToe{
                     if (checkBoardDirections(testBoard))
                         return true;
                 }
-                System.arraycopy(board,0,testBoard,0,9);
+                stupidArrayCopy(board,testBoard);
+
             }
         }
 
@@ -47,9 +62,10 @@ public class TicTacToeAI extends TicTacToe{
             for(moveY = 0; moveY<3;moveY++){
                 if (testBoard[moveX][moveY]==0) {
                     testBoard[moveX][moveY] = user;
-                    if (checkBoardDirections(testBoard)) return true;
+                    if (checkBoardDirections(testBoard))
+                        return true;
                 }
-                System.arraycopy(board,0,testBoard,0,9);
+                stupidArrayCopy(board,testBoard);
             }
         }
 
@@ -73,13 +89,25 @@ public class TicTacToeAI extends TicTacToe{
 
     protected boolean checkMove(){
 
-        int [][] testBoard = board.clone();
-        if (checkBoardDirections(testBoard) || checkFullBoard(testBoard)){
-            genericBtnClick(moveX,moveY);
-            return true;
+        //stupidArrayCopy(board,testBoard);
+        if ((board[moveX][moveY]==0) )  {
+            //if (!checkBoardDirections(testBoard) && !checkFullBoard(testBoard)) {
+                genericBtnClick(moveX, moveY);
+                return true;
+            //}
         }
 
         return false;
+    }
+
+    protected void stupidArrayCopy(int [][] arraySrc,int [][] arrayDest){
+        int x = 0;
+        for (int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                x=arraySrc[i][j];
+                arrayDest[i][j]=x;
+            }
+        }
     }
 
 
