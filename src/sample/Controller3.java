@@ -45,11 +45,33 @@ public class Controller3 {
             }
         });
 
-        /*
-        btnNormal.setOnAction(e->openScene2(2));
 
-        btnHard.setOnAction(e->openScene2(3));
-        */
+        btnNormal.setOnAction(e->{
+            try {
+                window = (Stage) btnEasy.getScene().getWindow();
+                scene2 = new Scene((Parent) root2.load());
+                Controller2 testController = root2.getController();
+                testController.setAiOption(2);
+                scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
+                window.setScene(scene2);
+            } catch (Exception e1){
+
+            }
+        });
+
+        btnHard.setOnAction(e->{
+            try {
+                window = (Stage) btnEasy.getScene().getWindow();
+                scene2 = new Scene((Parent) root2.load());
+                Controller2 testController = root2.getController();
+                testController.setAiOption(3);
+                scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
+                window.setScene(scene2);
+            } catch (Exception e1){
+
+            }
+        });
+
 
     }
 

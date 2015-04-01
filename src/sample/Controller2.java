@@ -33,18 +33,19 @@ public class Controller2{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        //TicTacToe game = null;
+        TicTacToe game;
 
-        /*
+
         if (aiOption==0){
             game = new TicTacToe();
         }else if(aiOption==1){
             game = new TicTacToeAIEasy();
+        }else if(aiOption==2) {
+            game = new TicTacToeAINormal();
+        }else{ //aiOption==3
+            game = new TicTacToeAIHard();
         }
-        */
-        //TicTacToe game = new TicTacToe(); //WORKS
-        //TicTacToeAI game = new TicTacToeAI();
-        TicTacToeAIEasy game = new TicTacToeAIEasy();
+
         game.setController(this);
         game.resetBoard();
 

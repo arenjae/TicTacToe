@@ -10,15 +10,41 @@ public class TicTacToeAI extends TicTacToe{
 
     protected int moveX, moveY;
     protected int [][] testBoard=new int[3][3];
-
-    public void setAiTurn(boolean aiTurn) {
-        this.aiTurn = aiTurn;
-    }
-
     protected boolean aiTurn = false;
 
     public TicTacToeAI() {
 
+    }
+
+    public int genericBtnClick(int i, int j){
+        if (board[i][j]!= 0) return 0;
+
+        if (player==1) {
+            setBoard(i,j);
+            aController.setBtnText(i,j,p1);
+        }else{ //(player==2)
+            setBoard(i,j);
+            aController.setBtnText(i,j,p2);
+        }
+
+
+        checkBoard();
+        switchPlayer();
+
+        aiTurn = !aiTurn;
+
+        if (aiTurn) createMove();
+
+        return 1; //move was successful
+    }
+
+    protected void createMove(){
+        //return TicTacToe.genericBtnClick(window.getScene().getClass(),btnTL,moveX,moveY);
+        //If future move returns true, that means moveX and moveY are already configured.
+        //if it returns false, then AI needs to create its own move
+        if (!checkFutureMove())
+            generateMove();
+        genericBtnClick(moveX,moveY);
     }
 
 
@@ -30,15 +56,13 @@ public class TicTacToeAI extends TicTacToe{
         //Systematically iterate through the board, putting in an move at each square
         //and then check to see if it would be a winning move. If it is, then put a place there.
         //This checks two things, if the user will win with that move, and if the AI will win with that move
-
-        //System.arraycopy(board,0,testBoard,0,board.length*board.length);
         stupidArrayCopy(board,testBoard);
         //generate a move (1-6, as long as it is not already occupied)
         //test move as player (if player will win, then move there)
         //then test move as AI (if AI will win, then move there)
 
         int computer = player;
-        int user; //WRONG, change later to opposite of player
+        int user; //opposite of player
 
         if (player==1)
             user = 2;
@@ -73,15 +97,6 @@ public class TicTacToeAI extends TicTacToe{
         return false;
     }
 
-    protected void createMove(){
-        //return TicTacToe.genericBtnClick(window.getScene().getClass(),btnTL,moveX,moveY);
-        //If future move returns true, that means moveX and moveY are already configured.
-        //if it returns false, then AI needs to create its own move
-        if (!checkFutureMove()){
-            generateMove();
-        }
-
-    }
 
     protected void generateMove(){
 
@@ -89,19 +104,16 @@ public class TicTacToeAI extends TicTacToe{
 
     protected boolean checkMove(){
 
-        //stupidArrayCopy(board,testBoard);
         if ((board[moveX][moveY]==0) )  {
-            //if (!checkBoardDirections(testBoard) && !checkFullBoard(testBoard)) {
                 genericBtnClick(moveX, moveY);
                 return true;
-            //}
         }
 
         return false;
     }
 
     protected void stupidArrayCopy(int [][] arraySrc,int [][] arrayDest){
-        int x = 0;
+        int x;
         for (int i=0;i<3;i++){
             for(int j=0;j<3;j++){
                 x=arraySrc[i][j];

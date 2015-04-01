@@ -1,7 +1,9 @@
 package sample;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 
 /*
  * Created by earthshine0 on 3/6/2015.
@@ -59,12 +61,19 @@ public class TicTacToe{
     //If someone won, then display message and reset board
     protected void checkBoard(){
         if (checkBoardDirections()){
-            aController.setLblText("Congrats, player " + player + " has won!");
-
-            resetBoard();
+            //aController.setLblText("Congrats, player " + player + " has won!");
+            aController.setLblText("test");
+            PauseTransition pause = new PauseTransition(Duration.seconds(5));
+            pause.setOnFinished(e -> resetBoard());
+            pause.play();
+            //resetBoard();
         } else if (checkFullBoard()){
-            aController.setLblText("Tie Game...restarting");
-            resetBoard();
+            //aController.setLblText("Tie Game...restarting");
+            aController.setLblText("test2");
+            PauseTransition pause = new PauseTransition(Duration.seconds(5));
+            pause.setOnFinished(e -> resetBoard());
+            pause.play();
+            //resetBoard();
         }
 
     }
