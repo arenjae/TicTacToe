@@ -1,6 +1,6 @@
 .root {
   -fx-background-color:linear-gradient(to bottom, #d9e0cc 0%,#b4c687 100%);
-    -fx-padding: 0px;
+    -fx-padding: 0;
   -fx-font-size: 20px;
   -fx-font-family: "Comic Sans MS";
 }

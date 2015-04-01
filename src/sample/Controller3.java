@@ -39,7 +39,7 @@ public class Controller3 {
                 testController.setAiOption(1);
                 scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
                 window.setScene(scene2);
-            } catch (Exception e1){
+            } catch (Exception ignored){
 
             }
         });
@@ -54,7 +54,7 @@ public class Controller3 {
                 testController.setAiOption(2);
                 scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
                 window.setScene(scene2);
-            } catch (Exception e1){
+            } catch (Exception ignored){
 
             }
         });
@@ -68,7 +68,7 @@ public class Controller3 {
                 testController.setAiOption(3);
                 scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
                 window.setScene(scene2);
-            } catch (Exception e1){
+            } catch (Exception ignored){
 
             }
         });

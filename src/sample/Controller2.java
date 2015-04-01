@@ -18,7 +18,7 @@ public class Controller2{
     @FXML
     protected Label lblStatus;
 
-    protected int aiOption = 3;
+    protected int aiOption = 2;
 
     @FXML
     void initialize() {
@@ -102,9 +102,6 @@ public class Controller2{
 
     public int getAiOption(){return aiOption;}
 
-    protected void changeScenes(){
-        //Empty for now, may fill it so that when user wins game they have a choice of going back to the main menu
-    }
 
 }
 

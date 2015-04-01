@@ -19,8 +19,6 @@ public class Controller1{
     private Button btnNewGame;
 
     protected Stage window;
-    protected Parent root;
-    protected Parent root2;
 
     @FXML
     void initialize() throws Exception{
@@ -29,12 +27,14 @@ public class Controller1{
 
         btnNewGame.setOnAction(e -> {
             try {
-                root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+                FXMLLoader root = new FXMLLoader(getClass().getResource("scene2.fxml"));
                 window = (Stage) btnNewGame.getScene().getWindow();
-                Scene scene2 = new Scene(root);
+                Scene scene2 = new Scene((Parent) root.load());
+                Controller2 testController = root.getController();
+                testController.setAiOption(0);
                 scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
                 window.setScene(scene2);
-            } catch (Exception e1){
+            } catch (Exception ignored){
 
             }
         });
@@ -43,12 +43,14 @@ public class Controller1{
 
         btnNewGameCPU.setOnAction(e->{
             try {
-                root2 = FXMLLoader.load(getClass().getResource("scene3.fxml"));
+                FXMLLoader root = new FXMLLoader(getClass().getResource("scene3.fxml"));
                 window = (Stage) btnNewGameCPU.getScene().getWindow();
-                Scene scene3 = new Scene(root2);
+                Scene scene3 = new Scene((Parent) root.load());
+                Controller2 testController = root.getController();
+                testController.setAiOption(0);
                 scene3.getStylesheets().add(getClass().getResource("styleScene3.css").toExternalForm());
                 window.setScene(scene3);
-            } catch (Exception e1){
+            } catch (Exception ignored){
 
             }
 
