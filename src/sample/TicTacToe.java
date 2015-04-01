@@ -63,17 +63,17 @@ public class TicTacToe{
         if (checkBoardDirections()){
             //aController.setLblText("Congrats, player " + player + " has won!");
             aController.setLblText("test");
-            PauseTransition pause = new PauseTransition(Duration.seconds(5));
-            pause.setOnFinished(e -> resetBoard());
-            pause.play();
-            //resetBoard();
+            //PauseTransition pause = new PauseTransition(Duration.seconds(5));
+            //pause.setOnFinished(e -> resetBoard());
+            //pause.play();
+            resetBoard();
         } else if (checkFullBoard()){
             //aController.setLblText("Tie Game...restarting");
             aController.setLblText("test2");
-            PauseTransition pause = new PauseTransition(Duration.seconds(5));
-            pause.setOnFinished(e -> resetBoard());
-            pause.play();
-            //resetBoard();
+            //PauseTransition pause = new PauseTransition(Duration.seconds(5));
+            //pause.setOnFinished(e -> resetBoard());
+            //pause.play();
+            resetBoard();
         }
 
     }

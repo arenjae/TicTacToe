@@ -18,7 +18,7 @@ public class Controller2{
     @FXML
     protected Label lblStatus;
 
-    protected int aiOption = 0;
+    protected int aiOption = 1;
 
     @FXML
     void initialize() {
@@ -34,7 +34,6 @@ public class Controller2{
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
         TicTacToe game;
-
 
         if (aiOption==0){
             game = new TicTacToe();
