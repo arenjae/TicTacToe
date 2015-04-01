@@ -40,14 +40,11 @@ public class Controller1{
         });
 
 
-
         btnNewGameCPU.setOnAction(e->{
             try {
                 FXMLLoader root = new FXMLLoader(getClass().getResource("scene3.fxml"));
                 window = (Stage) btnNewGameCPU.getScene().getWindow();
                 Scene scene3 = new Scene((Parent) root.load());
-                Controller2 testController = root.getController();
-                testController.setAiOption(0);
                 scene3.getStylesheets().add(getClass().getResource("styleScene3.css").toExternalForm());
                 window.setScene(scene3);
             } catch (Exception ignored){

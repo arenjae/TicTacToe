@@ -8,16 +8,14 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Controller3 {
+    @FXML
+    private Button btnEasy;
 
     @FXML
     private Button btnNormal;
 
     @FXML
     private Button btnHard;
-
-    @FXML
-    private Button btnEasy;
-
 
     protected Stage window;
     protected Parent root;

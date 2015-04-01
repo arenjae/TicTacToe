@@ -88,15 +88,6 @@ public class TicTacToe{
         return true;
     }
 
-    protected boolean checkFullBoard(int [][] testBoard){
-        for (int x=0;x<3;x++){
-            for(int y=0;y<3;y++){
-                if(testBoard[x][y]==0) return false;
-            }
-        }
-
-        return true;
-    }
 
     public void resetBoard() {
         for (int x=0;x<3;x++){
