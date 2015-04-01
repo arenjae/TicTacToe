@@ -30,8 +30,6 @@ public class Controller3 {
         assert btnHard != null : "fx:id=\"btnHard\" was not injected: check your FXML file 'scene3.fxml'.";
         assert btnEasy != null : "fx:id=\"btnEasy\" was not injected: check your FXML file 'scene3.fxml'.";
 
-
-
         btnEasy.setOnAction(e->{
             try {
                 root2 = new FXMLLoader(getClass().getResource("scene2.fxml"));

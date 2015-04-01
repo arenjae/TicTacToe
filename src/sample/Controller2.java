@@ -18,7 +18,7 @@ public class Controller2{
     @FXML
     protected Label lblStatus;
 
-    protected int aiOption = 1;
+    protected int aiOption = 3;
 
     @FXML
     void initialize() {
