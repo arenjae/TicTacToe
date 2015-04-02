@@ -3,6 +3,7 @@ package sample;
 import javafx.animation.PauseTransition;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /*
@@ -32,12 +33,10 @@ public class TicTacToe{
             aController.setBtnText(i,j,p2);
         }
 
-
         checkBoard();
         switchPlayer();
 
         return 1; //move was successful
-
     }
 
 
@@ -60,7 +59,7 @@ public class TicTacToe{
 
     //If someone won, then display message and reset board
     protected void checkBoard(){
-        if (checkBoardDirections()){
+        if (checkBoardDirections(board)){
             //aController.setLblText("Congrats, player " + player + " has won!");
             aController.setLblText("test");
             //PauseTransition pause = new PauseTransition(Duration.seconds(5));
@@ -97,34 +96,6 @@ public class TicTacToe{
         }
 
         aController.resetButtons();
-    }
-
-
-    protected boolean checkBoardDirections(){
-
-        //Check columns
-        for (int x=0;x<3;x++) {
-            if (board[x][0]!=0 && board[x][0] == board[x][1] && board[x][1] == board[x][2])
-                return true;
-        }
-
-        //Check rows
-        for (int y=0;y<3;y++) {
-            if (board[0][y]!=0 && board[0][y] == board[1][y] && board[1][y] == board[2][y])
-                return true;
-        }
-
-        //Diagonal right
-        if (board[0][0]!=0 && board[0][0] == board[1][1] && board[1][1] == board[2][2]){
-            return true;
-        }
-
-        //Diagonal Left
-        if (board[0][2]!=0 && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-            return true;
-        }
-
-        return false;
     }
 
     protected boolean checkBoardDirections(int [][]testBoard){

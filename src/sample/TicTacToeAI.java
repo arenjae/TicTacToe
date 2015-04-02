@@ -102,16 +102,6 @@ public class TicTacToeAI extends TicTacToe{
 
     }
 
-    protected boolean checkMove(){
-
-        if ((board[moveX][moveY]==0) )  {
-                genericBtnClick(moveX, moveY);
-                return true;
-        }
-
-        return false;
-    }
-
     protected void stupidArrayCopy(int [][] arraySrc,int [][] arrayDest){
         int x;
         for (int i=0;i<3;i++){

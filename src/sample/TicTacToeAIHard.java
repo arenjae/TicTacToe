@@ -27,8 +27,9 @@ public class TicTacToeAIHard extends TicTacToeAI {
         */
 
         int middle = 1;
-
-        if (cornerIsAvailable()) {
+        if (playerHasACorner() && board[middle][middle]==0){
+            moveX=moveY=middle;
+        }else if (cornerIsAvailable()) {
             moveToACorner();
         }else if (board[middle][middle]==0){
             moveX=moveY=middle;
@@ -38,6 +39,11 @@ public class TicTacToeAIHard extends TicTacToeAI {
 
     }
 
+    //Returns true if user has a corner
+    private boolean playerHasACorner(){
+        return (board[0][0] != 0 && board[0][0] != player) || (board[0][2] != 0 && board[0][2] != player)
+                || (board[2][0] != 0 && board[2][0] != player) || (board[2][2] != 0 && board[2][2] != player);
+    }
 
     private boolean cornerIsAvailable() {
         return  (board[0][0]==0 || board[2][0]==0 || board[0][2]==0 || board[2][2]==0);
@@ -52,8 +58,9 @@ public class TicTacToeAIHard extends TicTacToeAI {
         int cornerX = 0;
         int cornerY = 0;
         Random rnd = new Random();
-        int randomCorner = rnd.nextInt(3);
+        int randomCorner;
         do {
+            randomCorner = rnd.nextInt(3);
             if (randomCorner==0){
                 moveX=cornerX;
                 moveY=cornerY;
@@ -75,8 +82,9 @@ public class TicTacToeAIHard extends TicTacToeAI {
         int cornerX = 0;
         int cornerY = 0;
         Random rnd = new Random();
-        int randomSide = rnd.nextInt(3);
+        int randomSide;
         do {
+            randomSide = rnd.nextInt(3);
             if (randomSide==0){
                 moveX=cornerX+1;
                 moveY=cornerY;

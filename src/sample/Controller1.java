@@ -27,29 +27,26 @@ public class Controller1{
 
         btnNewGame.setOnAction(e -> {
             try {
-                FXMLLoader root = new FXMLLoader(getClass().getResource("scene2.fxml"));
-                window = (Stage) btnNewGame.getScene().getWindow();
-                Scene scene2 = new Scene((Parent) root.load());
-                Controller2 testController = root.getController();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("scene2.fxml"));
+                Controller2 testController = new Controller2();// = root.getController();
+                loader.setController(testController);
                 testController.setAiOption(0);
+                window = (Stage) btnNewGame.getScene().getWindow();
+                Scene scene2 = new Scene((Parent) loader.load());
                 scene2.getStylesheets().add(getClass().getResource("styleScene2.css").toExternalForm());
                 window.setScene(scene2);
-            } catch (Exception ignored){
-
-            }
+            } catch (Exception ignored){}
         });
 
 
         btnNewGameCPU.setOnAction(e->{
             try {
-                FXMLLoader root = new FXMLLoader(getClass().getResource("scene3.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("scene3.fxml"));
                 window = (Stage) btnNewGameCPU.getScene().getWindow();
-                Scene scene3 = new Scene((Parent) root.load());
+                Scene scene3 = new Scene((Parent) loader.load());
                 scene3.getStylesheets().add(getClass().getResource("styleScene3.css").toExternalForm());
                 window.setScene(scene3);
-            } catch (Exception ignored){
-
-            }
+            } catch (Exception ignored){}
 
         });
 
