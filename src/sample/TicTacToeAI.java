@@ -56,10 +56,10 @@ public class TicTacToeAI extends TicTacToe{
         //Systematically iterate through the board, putting in an move at each square
         //and then check to see if it would be a winning move. If it is, then put a place there.
         //This checks two things, if the user will win with that move, and if the AI will win with that move
-        stupidArrayCopy(board,testBoard);
         //generate a move (1-6, as long as it is not already occupied)
         //test move as player (if player will win, then move there)
         //then test move as AI (if AI will win, then move there)
+
 
         int computer = player;
         int user; //opposite of player
@@ -69,7 +69,9 @@ public class TicTacToeAI extends TicTacToe{
         else
             user = 1;
 
+        stupidArrayCopy(board,testBoard);
 
+        //Check if the computer can win first
         for (moveX = 0; moveX<3;moveX++){
             for(moveY = 0; moveY<3;moveY++){
                 if (testBoard[moveX][moveY]==0){
@@ -81,6 +83,7 @@ public class TicTacToeAI extends TicTacToe{
 
             }
         }
+
 
         for (moveX = 0; moveX<3;moveX++){
             for(moveY = 0; moveY<3;moveY++){

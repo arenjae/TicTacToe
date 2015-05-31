@@ -16,3 +16,10 @@ Create ai
 -For hard, follow sequence based on where user has moved
     -In ai super class, have a method that checks users moves and attempts to block
     -In ai super class, have a method that checks ai and if there are two ai marks that will make a tic tac toe with a third, then return the position (or modify the global variable for position and return true)
+
+
+
+//Basically have a semi sarcastic quirky response to everything
+If the computer wins, put revolving statements about robots conquering humanity
+if player wins, comment about humanity living for another day
+If both

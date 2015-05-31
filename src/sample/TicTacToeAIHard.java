@@ -60,7 +60,7 @@ public class TicTacToeAIHard extends TicTacToeAI {
         Random rnd = new Random();
         int randomCorner;
         do {
-            randomCorner = rnd.nextInt(3);
+            randomCorner = rnd.nextInt(4);
             if (randomCorner==0){
                 moveX=cornerX;
                 moveY=cornerY;
@@ -84,7 +84,7 @@ public class TicTacToeAIHard extends TicTacToeAI {
         Random rnd = new Random();
         int randomSide;
         do {
-            randomSide = rnd.nextInt(3);
+            randomSide = rnd.nextInt(4);
             if (randomSide==0){
                 moveX=cornerX+1;
                 moveY=cornerY;

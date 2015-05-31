@@ -1,9 +1,16 @@
 package sample;
 
 import javafx.animation.PauseTransition;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 /*
@@ -61,19 +68,65 @@ public class TicTacToe{
     protected void checkBoard(){
         if (checkBoardDirections(board)){
             //aController.setLblText("Congrats, player " + player + " has won!");
-            aController.setLblText("test");
+            //aController.setLblText("test");
             //PauseTransition pause = new PauseTransition(Duration.seconds(5));
             //pause.setOnFinished(e -> resetBoard());
             //pause.play();
+
+            //INstead of resetBoard, show interface to check and see if player wants to continue game
+            //or they want to go back to the main menu
+            showOverlay("Player " + player + " has won!");
             resetBoard();
         } else if (checkFullBoard()){
             //aController.setLblText("Tie Game...restarting");
-            aController.setLblText("test2");
-            //PauseTransition pause = new PauseTransition(Duration.seconds(5));
-            //pause.setOnFinished(e -> resetBoard());
-            //pause.play();
+            //aController.setLblText("test2");
+            showOverlay("Tie Game");
             resetBoard();
         }
+
+    }
+
+    /* Simple function that displays an overlay of the current game board
+     * and asks the user if they want to play again or if they want
+     * to go back to main menu. This
+     *Steps:
+     * -Create Scene
+     * -Show Scene Grid Overlay
+     */
+    private void showOverlay(String strMessage) {
+        //Create overlay pieces
+        //Display overlay on top (Stack Pane?)
+
+
+        //StackPane stackPane;
+        /*
+        Button btnMainMenu = new Button("Main Menu");
+        Button btnPlayAgain= new Button("Play Again");
+
+
+
+        VBox layout = new VBox(btnMainMenu, btnPlayAgain);
+        layout.setStyle("-fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 10;");
+        layout.setMaxWidth(aController.btnBL.getScene().getWidth());
+        layout.setMaxHeight(aController.btnBL.getScene().getHeight());
+
+
+        ImageView imageView = new ImageView(aController.btnBL.getScene().snapshot(null));
+        imageView.setEffect(new GaussianBlur(5));
+
+        StackPane background = new StackPane(imageView,layout);
+
+        Scene scene2 = new Scene(background);
+
+        */
+        //imageView.setFitHeight(aController.btnBL.getScene().getHeight());
+
+
+
+
+        //scene2.setFill(aController.btnBL.getScene().snapshot());
+
+        aController.createOverlay(strMessage);
 
     }
 

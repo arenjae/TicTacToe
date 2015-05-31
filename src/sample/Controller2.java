@@ -1,8 +1,17 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
 public class Controller2{
@@ -20,6 +29,8 @@ public class Controller2{
 
     protected int aiOption = 0;
 
+    protected TicTacToe game;
+
     @FXML
     void initialize() {
         assert btnML != null : "fx:id=\"btnML\" was not injected: check your FXML file 'scene2.fxml'.";
@@ -33,7 +44,7 @@ public class Controller2{
         assert btnTL != null : "fx:id=\"btnTL\" was not injected: check your FXML file 'scene2.fxml'.";
         assert lblStatus != null : "fx:id\"lblStatus\" was not injected: check your FXML file 'scene2.fxml'.";
 
-        TicTacToe game;
+        //TicTacToe game;
 
         if (aiOption==0){
             game = new TicTacToe();
@@ -65,6 +76,66 @@ public class Controller2{
         btnBM.setOnAction(event -> game.genericBtnClick(1, 2));
 
         btnBR.setOnAction(event -> game.genericBtnClick(2, 2));
+
+    }
+
+    protected void createOverlay(String strMessage){
+
+        //Creates buttons, label, original scene, and original window for overlay
+        Button btnMainMenu = new Button("Main Menu");
+        Button btnPlayAgain= new Button("Play Again");
+        Label lblMessage = new Label(strMessage);
+        Scene origScene = btnBL.getScene();
+        Stage window = (Stage) origScene.getWindow();
+
+        //Setting up the buttons
+        btnMainMenu.setMaxWidth(200);
+        btnPlayAgain.setMaxWidth(200);
+
+        //This section for setting the display of buttons
+        VBox layout = new VBox(lblMessage, btnMainMenu, btnPlayAgain);
+        layout.setStyle("-fx-background-color: rgba(0, 0, 0, 0.3);");
+        layout.getStylesheets().add(getClass().getResource("styleScene4-overlay.css").toExternalForm());
+        layout.setMaxWidth(btnBL.getScene().getWidth());
+        layout.setMaxHeight(btnBL.getScene().getHeight());
+        layout.setSpacing(10);
+        layout.setAlignment(Pos.CENTER);
+        //End section
+
+
+        //This gets a snapshot of the game, then blurs it and sets it as the background
+        //Maybe use fade animation?
+        ImageView imageView = new ImageView(btnBL.getScene().snapshot(null));
+        imageView.setEffect(new GaussianBlur(5));
+
+        //This combines the blurred background with the buttons
+        StackPane background = new StackPane(imageView,layout);
+
+        //Creates a new scene for the overlay
+        Scene scene4Overlay = new Scene(background);
+
+        //Displays overlay to user (replaces game board scene)
+        window.setScene(scene4Overlay);
+
+
+        //User chooses play again, game board resets and scene is switched
+        //to game board
+        btnPlayAgain.setOnAction(event -> {
+            game.resetBoard();
+            window.setScene(origScene);
+        });
+
+
+        //User chooses Main Menu, scene for main menu is created and then switched too.
+        btnMainMenu.setOnAction(event -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("scene1.fxml"));
+                Scene scene1 = new Scene((Parent) loader.load());
+                scene1.getStylesheets().add(getClass().getResource("styleScene1.css").toExternalForm());
+                window.setScene(scene1);
+            } catch (Exception ignored){}
+        });
+
 
     }
 
