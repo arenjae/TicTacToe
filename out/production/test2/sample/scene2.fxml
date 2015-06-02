@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,10 +11,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.ColumnConstraints?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="300.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="lblStatus" prefHeight="39.0" prefWidth="300.0" text="Status" />
-      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0">
+      <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="300.0" text="Status" textAlignment="CENTER" />
+      <GridPane alignment="CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" vgap="5.0">
       <columnConstraints>
           <ColumnConstraints maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
@@ -35,6 +36,12 @@
           <Button fx:id="btnBM" mnemonicParsing="false" prefHeight="134.0" prefWidth="234.0" text="ButtonBM" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
           <Button fx:id="btnBR" mnemonicParsing="false" prefHeight="134.0" prefWidth="234.0" text="ButtonBR" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
       </GridPane>
    </children>
 </VBox>

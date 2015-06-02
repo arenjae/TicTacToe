@@ -16,7 +16,7 @@
     -fx-text-alignment: center;
     -fx-alignment: center;
     -fx-text-fill: #ffffff;
-    -fx-effect:dropshadow(gaussian, grey, 5, 0, 0, 2);
+    -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.4), 10, .5, 0, 3);
 
 }
 
@@ -29,7 +29,7 @@
     -fx-background-radius: 0,0;
     -fx-text-fill: #395306;
     -fx-background-color: linear-gradient(to bottom, #b7f741 0%, #c1f650 50%, #9ee817 51%, #9ee10a 100%);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 5 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 10, 0.0 , 0 , 5 );
 }
 
 .button:hover{

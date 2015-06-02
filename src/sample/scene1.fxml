@@ -10,11 +10,7 @@
    <children>
       <Pane prefHeight="101.0" prefWidth="300.0">
          <children>
-            <Label contentDisplay="CENTER" prefHeight="101.0" prefWidth="300.0" text="Tic Tac Toe" textFill="#75a417">
-               <effect>
-                  <InnerShadow blurType="ONE_PASS_BOX" color="#1e802b" />
-               </effect>
-            </Label>
+            <Label contentDisplay="CENTER" prefHeight="101.0" prefWidth="300.0" text="Tic Tac Toe" textFill="#75a417" />
          </children>
       </Pane>
       <Button fx:id="btnNewGame" alignment="CENTER" defaultButton="true" mnemonicParsing="false" pickOnBounds="false" prefHeight="72.0" prefWidth="300.0" text="New Game">

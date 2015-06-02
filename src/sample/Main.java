@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /* Created by earthshine0 on 3/15/2015
@@ -22,9 +23,14 @@ public class Main extends Application {
 
         window = primaryStage;
         root = FXMLLoader.load(getClass().getResource("scene1.fxml"));
-        Scene scene = new Scene(root, 300,375);
+        Scene scene = new Scene(root, 300,400);
         scene.getStylesheets().add(getClass().getResource("styleScene1.css").toExternalForm());
-        
+
+        //window.getIcons().add(new Image("/sample/TicTacToeIcon6.png"));
+        //window.getIcons().add(new Image("/sample/TicTacToeIcon5.png"));
+        //window.getIcons().add(new Image("/sample/TicTacToeIcon4.png"));
+        window.getIcons().add(new Image("/sample/TicTacToeIcon3.png"));
+
         window.setTitle("Tic Tac Toe");
         window.setScene(scene);
         window.show();
