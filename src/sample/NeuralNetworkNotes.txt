@@ -1,0 +1,11 @@
+Neural Network:
+
+-Have a Network Class
+-have a node class
+	-node contains a input and a weight and an output
+	-nodes can be linked together
+-have a memory class (remembers results of outputs)
+
+
+function of node class
+b = b + input <- also need to include weight of input
