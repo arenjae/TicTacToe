@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" spacing="20.0" styleClass="root" stylesheets="@styleScene4-overlay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1">
+   <children>
+      <Pane prefHeight="101.0" prefWidth="300.0">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="101.0" prefWidth="300.0" text="Tic Tac Toe" textFill="#75a417">
+               <effect>
+                  <InnerShadow blurType="ONE_PASS_BOX" color="#1e802b" />
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btnNewGame" alignment="CENTER" defaultButton="true" mnemonicParsing="false" pickOnBounds="false" prefHeight="72.0" prefWidth="300.0" text="Main Menu">
+         <effect>
+            <Blend mode="SOFT_LIGHT" />
+         </effect></Button>
+      <Button fx:id="btnNewGameCPU" alignment="CENTER" mnemonicParsing="false" prefHeight="72.0" prefWidth="300.0" text="Play Again" />
+   </children>
+</VBox>

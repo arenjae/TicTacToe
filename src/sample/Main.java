@@ -23,7 +23,7 @@ public class Main extends Application {
 
         window = primaryStage;
         root = FXMLLoader.load(getClass().getResource("scene1.fxml"));
-        Scene scene = new Scene(root, 300,400);
+        Scene scene = new Scene(root, 288,380);
         scene.getStylesheets().add(getClass().getResource("styleScene1.css").toExternalForm());
 
         //window.getIcons().add(new Image("/sample/TicTacToeIcon6.png"));
@@ -31,6 +31,7 @@ public class Main extends Application {
         //window.getIcons().add(new Image("/sample/TicTacToeIcon4.png"));
         window.getIcons().add(new Image("/sample/TicTacToeIcon3.png"));
 
+        window.setResizable(false);
         window.setTitle("Tic Tac Toe");
         window.setScene(scene);
         window.show();

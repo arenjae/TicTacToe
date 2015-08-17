@@ -82,7 +82,6 @@ public class TicTacToe{
      */
     private void showOverlay(String strMessage) {
         aController.createOverlay(strMessage);
-
     }
 
     protected boolean checkFullBoard() {
