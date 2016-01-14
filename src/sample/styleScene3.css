@@ -20,10 +20,6 @@
     -fx-text-fill:linear-gradient(to bottom, #bfff41 0%, #aadf4f 52%, #7eb913 53%, #9ee10a 100%);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 5 ), innershadow(gaussian, rgba(0,0,0,1),3, 1.0, 2, 2);
 
-    /*-fx-text-fill:#c1f650;
-    -fx-effect: innershadow(one-pass-box, #006400, 10, 0, 0, 0),
-                 dropshadow(gaussian, grey, 5, 0, 0, 2);*/
-
 }
 
 .button{
@@ -34,7 +30,6 @@
     -fx-background-insets: 0,1 ;
     -fx-background-radius: 0,0;
     -fx-text-fill: #395306;
-    /*-fx-background-color: linear-gradient(to bottom, #b7f741 0%, #c1f650 50%, #9ee817 51%, #9ee10a 100%);*/
     -fx-background-color: linear-gradient(to bottom, rgba(183,247,65,.75) 0%, #c1f650 50%, rgba(158,232,23,.75) 51%, #9ee10a 100%);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 10, 0.0 , 0 , 5 );
 }
