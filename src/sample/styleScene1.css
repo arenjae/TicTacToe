@@ -11,7 +11,7 @@
 
 .label{
     -fx-font-family: "Corbel";
-    -fx-font-size: 60px;
+    -fx-font-size: 40px;
     -fx-font-weight: bold;
     -fx-text-alignment: center;
     -fx-alignment: center;
@@ -23,7 +23,7 @@
 
 .button{
     -fx-font-family: "Corbel";
-    -fx-font-size: 25px;
+    -fx-font-size: 19px;
     -fx-font-weight: bold;
     -fx-animated: true;
     -fx-background-insets: 0,1 ;
