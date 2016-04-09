@@ -12,4 +12,4 @@ So far, I have these game modes:
 
 And later when I finish the Neural Network I will add:
   * Player vs Neural Net
-  * Neural Neural Net vs CPU
+  * Neural Net vs CPU
