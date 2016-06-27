@@ -1,26 +1,7 @@
-Create class for tic tac toe, separate from controller
-create a subclass for ai
-
-2 different ways to approach AI:
-
-1. The first is to make the AI a subclass of tic tac toe, and to control it from there (player moves, ai moves, etc)
-
-	When initializing tic tac toe, an argument is passed to it to specify that it is ai vs player
-	NOTE: this probably won't work because for some reason main needs a static class and a static class shouldn't have an instance?
-
-2. The second is to control it separately from the main tic tac toe program. For example, player presses a button, tic tac toe AI presses a button.
-
-Create ai
--For easy, have random number generator randomly select a spot that isn't occupied
--For normal, have random number generator select a corner or the middle, and then a side
--For hard, follow sequence based on where user has moved
-    -In ai super class, have a method that checks users moves and attempts to block
-    -In ai super class, have a method that checks ai and if there are two ai marks that will make a tic tac toe with a third, then return the position (or modify the global variable for position and return true)
-
-
-
+*Features*
 //Basically have a semi sarcastic quirky response to everything
 If the computer wins, put revolving statements about robots conquering humanity
 if player wins, comment about humanity living for another day
 If both
 
+-Need to create scoring system?
