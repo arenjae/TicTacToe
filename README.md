@@ -14,7 +14,7 @@ And later when I finish the Neural Network I will add:
   * Player vs Neural Net
   * Neural Net vs CPU
 
-#Copyright
-###Copyright (c) 2016 Rachael Johnson
+##Copyright
+#####Copyright (c) 2016 Rachael Johnson
 This code is available under the "MIT License".
 Please see the file LICENSE in this distribution for license terms.
