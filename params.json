@@ -1,1 +1,7 @@
-{"name":"Tic Tac Toe","tagline":"This is a Tic Tac Toe game that I am using to explore JavaFX, Java, CSS, XML and FXML, and Neural Networks","body":"### Welcome to Tic Tac Toe.\r\nThis is a java program that allows the user to play against another user, the computer, or an ai (powered by a neural network!).","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
+{
+  "name": "Tic Tac Toe",
+  "tagline": "This is a Tic Tac Toe game that I am using to explore JavaFX, Java, CSS, XML and FXML, and Neural Networks",
+  "body": "### Welcome to Tic Tac Toe.\r\nThis is a java program that allows the user to play against another user, the computer, or an ai (powered by a neural network!).",
+  "google": "",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
