@@ -2,7 +2,7 @@
 All code is in src/sample. 
 A TicTacToe.jar file is included for you to play with.
 
-Link To Website: http://earthshine0.github.io/TicTacToe/
+Link To Website: http://arenjae.com/TicTacToe/
 
 ##Idea
 The idea behind this project was to better learn Java, JavaFX, FXML, CSS, Ai, and Neural Networks.
@@ -12,4 +12,4 @@ So far, I have these game modes:
 
 And later when I finish the Neural Network I will add:
   * Player vs Neural Net
-  * Neural Neural Net vs CPU
+  * Neural Net vs CPU
