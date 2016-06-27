@@ -9,3 +9,4 @@ Neural Network:
 
 function of node class
 b = b + input <- also need to include weight of input
+
